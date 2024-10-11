@@ -7,6 +7,6 @@ You cannot create or destroy Coobert, just like energy, Coobert is just am exist
 ## What is this website about?
 Coobertory is preserved for Coobert's lore of the past or future.
 
-# Join the discord to meet Coobert himself[
+# Join the discord to meet Coobert himself
 https://discord.gg/uqhnqNBWxt
 
