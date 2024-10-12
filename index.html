@@ -84,22 +84,6 @@
             bottom: 0;
             width: 100%;
         }
-
-        .coobert-icon {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            animation: spin 5s linear infinite;
-            z-index: 1001;
-        }
-
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
     </style>
 </head>
 <body>
@@ -111,6 +95,7 @@
                 <li><a href="#appearance">Appearance</a></li>
                 <li><a href="#personality">Personality</a></li>
                 <li><a href="#lore">Lore</a></li>
+                <li><a href="#discord">Lore</a></li>
             </ul>
         </nav>
     </header>
@@ -137,11 +122,14 @@
         </section>
     </main>
 
+        <section id="discord">
+            <h2>Join our Discord!</h2>
+            <iframe src="https://discord.com/widget?id=1280859961534058587&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </section>
+   
     <footer>
         <p>&copy; 2024 Coobertory. All rights reserved.</p>
     </footer>
-
-    <img src="https://raw.githubusercontent.com/EliteCronax/Coobertory/refs/heads/main/images/coobertdisc.ico" alt="Coobert Icon" class="coobert-icon">
 
     <script>
         function isElementInViewport(el) {
