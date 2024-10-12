@@ -84,6 +84,44 @@
             bottom: 0;
             width: 100%;
         }
+
+        .scroll-arrow {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-arrow span {
+            font-size: 24px;
+            animation: bounce 1s infinite;
+        }
+
+        .scroll-arrow p {
+            margin: 5px 0 0;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -95,7 +133,7 @@
                 <li><a href="#appearance">Appearance</a></li>
                 <li><a href="#personality">Personality</a></li>
                 <li><a href="#lore">Lore</a></li>
-                <li><a href="#discord">Lore</a></li>
+                <li><a href="#discord">Discord</a></li>
             </ul>
         </nav>
     </header>
@@ -120,16 +158,21 @@
             <h2>Coobert's Lore</h2>
             <p>Coobert wasn't shown to the world from a picture by me.. Coobert wasn't named by me.. This cat that I named Coobert was only inspired by a dog named Scoobert, and a cat that I found on Pinterest whilst searching for "funny cats". This was about 2 years ago with me being as bored as I am right now creating a pretty stupid website for a probably fictional feline that was taking a bath with its owner taking a funny picture of it and posting it wherever</p>
         </section>
-    </main>
 
         <section id="discord">
             <h2>Join our Discord!</h2>
             <iframe src="https://discord.com/widget?id=1280859961534058587&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </section>
-   
+    </main>
+
     <footer>
         <p>&copy; 2024 Coobertory. All rights reserved.</p>
     </footer>
+
+    <div id="scroll-arrow" class="scroll-arrow">
+        <span>&#9660;</span>
+        <p>Scroll Down</p>
+    </div>
 
     <script>
         function isElementInViewport(el) {
@@ -151,8 +194,30 @@
             });
         }
 
+        function checkScrollPosition() {
+            const scrollArrow = document.getElementById('scroll-arrow');
+            const totalHeight = document.documentElement.scrollHeight;
+            const viewportHeight = window.innerHeight;
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition + viewportHeight >= totalHeight - 50) {
+                scrollArrow.style.opacity = '0';
+            } else {
+                scrollArrow.style.opacity = '1';
+            }
+        }
+
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', checkScrollPosition);
         handleScroll();
+        checkScrollPosition();
+
+        document.getElementById('scroll-arrow').addEventListener('click', function() {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
