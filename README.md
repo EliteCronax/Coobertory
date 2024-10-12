@@ -29,7 +29,6 @@ You can explore our dedicated sections in the repository for in-depth articles, 
 #### Who is behind Coobertory?
 Coobertory is maintained by a team of passionate creators and enthusiasts who are dedicated to exploring the world of Coobert. You can find our individual profiles in the contributors section of the repository.
 
-Feel free to modify any of these entries to better fit your vision for Coobertory!
 
 # Join the discord to meet Coobert himself
 https://discord.gg/uqhnqNBWxt
