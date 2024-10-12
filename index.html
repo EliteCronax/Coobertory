@@ -17,7 +17,6 @@
         }
 
         header {
-            background-color: #2c2c2c;
             color: #fff;
             text-align: center;
             padding: 1rem;
@@ -78,7 +77,6 @@
         }
 
         footer {
-            background-color: #2c2c2c;
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -89,11 +87,18 @@
 
         .coobert-icon {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 50px;
             height: 50px;
-            transition: transform 0.3s ease;
+            animation: spin 5s linear infinite;
+            z-index: 1001;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
     </style>
 </head>
@@ -156,9 +161,6 @@
                     section.classList.add('visible');
                 }
             });
-
-            const icon = document.querySelector('.coobert-icon');
-            icon.style.transform = `rotate(${window.scrollY / 2}deg)`;
         }
 
         window.addEventListener('scroll', handleScroll);
