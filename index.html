@@ -3,221 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coobertory - The Lore of Coobert</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/EliteCronax/Coobertory/refs/heads/main/images/coobert.ico" type="image/x-icon">
+    <title>Coobertory</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/EliteCronax/Coobertory/refs/heads/main/images/coobert.ico" type="image/x-icon"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: roboto;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: #f4f4f4;
+            padding: 20px;
+            background-color: #f5f5f5;
         }
 
-        header {
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav ul {
-            padding: 0;
-            list-style-type: none;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #4CAF50;
-        }
-
-        main {
-            padding: 80px 20px 60px;
-            max-width: 800px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        section {
-            background-color: #2c2c2c;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            color: #4CAF50;
-        }
-
-        footer {
-            color: #fff;
+        h1 {
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            color: #333;
+            margin-bottom: 40px;
         }
 
-        .scroll-arrow {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(76, 175, 80, 0.8);
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .project-card a {
+            display: inline-block;
+            background: #3498db;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
         }
 
-        .scroll-arrow span {
-            font-size: 24px;
-            animation: bounce 1s infinite;
+        .project-card a:hover {
+            background: #2980b9;
         }
 
-        .scroll-arrow p {
-            margin: 5px 0 0;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+        .project-card p {
+            color: #666;
+            margin: 10px 0 0 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Coobertory</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Coobert</a></li>
-                <li><a href="#appearance">Appearance</a></li>
-                <li><a href="#personality">Personality</a></li>
-                <li><a href="#lore">Lore</a></li>
-                <li><a href="#discord">Discord</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <h1>Game Collection</h1>
+        <div class="projects">
+            <div class="project-card">
+                <h2>Drive Mad</h2>
+                <a href="https://BluePotato102.github.io/drive-mad" target="_blank">View Project</a>
+                <p>A driving-based game project where players navigate through challenging tracks and obstacles.</p>
+            </div>
 
-    <main>
-        <section id="about">
-            <h2>About Coobert</h2>
-            <p>Coobert is an extraordinary feline, a unique blend of charm and character that captures the heart at first glance. With his striking features and endearing quirks, he stands out in any room.</p>
-        </section>
+            <div class="project-card">
+                <h2>We Become What We Behold</h2>
+                <a href="https://ncase.github.io/wbwwb" target="_blank">View Project</a>
+                <p>An interactive game about news cycles, vicious cycles, and cycles of violence.</p>
+            </div>
 
-        <section id="appearance">
-            <h2>Coobert's Appearance</h2>
-            <p>Coobert's fur is a rich tapestry of colors, predominantly a warm, velvety orange that glows softly in the sunlight, accented by darker stripes that dance along his back and sides. His large, round eyes are perhaps his most captivating trait, radiating warmth and intelligence. The irises are a striking shade of bright green, reminiscent of emeralds.</p>
-        </section>
-
-        <section id="personality">
-            <h2>Coobert's Personality</h2>
-            <p>Coobert is affectionate and social, often seeking out human companionship. He has a knack for making everyone feel special, often following his favorite people around and gently nudging them with his head for attention. His playful yet mischievous nature leads him to investigate every nook and cranny, often getting into amusing predicaments that leave his human companions in stitches.</p>
-        </section>
-
-        <section id="lore">
-            <h2>Coobert's Lore</h2>
-            <p>Coobert wasn't shown to the world from a picture by me.. Coobert wasn't named by me.. This cat that I named Coobert was only inspired by a dog named Scoobert, and a cat that I found on Pinterest whilst searching for "funny cats". This was about 2 years ago with me being as bored as I am right now creating a pretty stupid website for a probably fictional feline that was taking a bath with its owner taking a funny picture of it and posting it wherever</p>
-        </section>
-
-        <section id="discord">
-            <h2>Join our Discord!</h2>
-            <iframe src="https://discord.com/widget?id=1280859961534058587&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Coobertory. All rights reserved.</p>
-    </footer>
-
-    <div id="scroll-arrow" class="scroll-arrow">
-        <span>&#9660;</span>
-        <p>Scroll Down</p>
+            <div class="project-card">
+                <h2>Minecraft</h2>
+                <a href="https://elitecronax.github.io/eaglrcraft/" target="_blank">View Project</a>
+                <p>A browser-based Minecraft-like gaming experience implementation.</p>
+            </div>
+        </div>
     </div>
-
-    <script>
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        function handleScroll() {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                if (isElementInViewport(section)) {
-                    section.classList.add('visible');
-                }
-            });
-        }
-
-        function checkScrollPosition() {
-            const scrollArrow = document.getElementById('scroll-arrow');
-            const totalHeight = document.documentElement.scrollHeight;
-            const viewportHeight = window.innerHeight;
-            const scrollPosition = window.scrollY;
-
-            if (scrollPosition + viewportHeight >= totalHeight - 50) {
-                scrollArrow.style.opacity = '0';
-            } else {
-                scrollArrow.style.opacity = '1';
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('scroll', checkScrollPosition);
-        handleScroll();
-        checkScrollPosition();
-
-        document.getElementById('scroll-arrow').addEventListener('click', function() {
-            window.scrollTo({
-                top: document.documentElement.scrollHeight,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 </body>
 </html>
