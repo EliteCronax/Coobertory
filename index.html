@@ -12,10 +12,24 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #3498db;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .container {
@@ -70,7 +84,7 @@
         }
 
         .feature-box {
-            background: #3f403f;
+            background: rgba(63, 64, 63, 0.8);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -78,6 +92,10 @@
 
         .feature-box h3 {
             margin-top: 0;
+        }
+
+        .feature-box a {
+            color: #f7f7f7;
         }
     </style>
 </head>
