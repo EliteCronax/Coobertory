@@ -13,141 +13,96 @@
             margin: 0;
             padding: 20px;
             background-color: #3498db;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
+            font-size: 3.5em;
+            color: #f7f7f7;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
             color: #f7f7f7;
             margin-bottom: 40px;
         }
 
-        h2 {
-            text-align: center;
-            color: #f7f7f7;
-            margin-bottom: 40px;
+        .main-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
+        .button {
             background: #3f403f;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h2 {
-            color: #f7f7f7;
-            margin-top: 0;
-        }
-
-        .project-card a {
-            display: inline-block;
-            background: #3498db;
             color: white;
-            padding: 8px 16px;
+            padding: 20px 40px;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 4px;
-            margin: 10px 0;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .project-card a:hover {
-            background: #2980b9;
+        .button:hover {
+            transform: translateY(-5px);
+            background: #2c2d2c;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
-        .project-card p {
+        .feature-section {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             color: #f7f7f7;
-            margin: 10px 0 0 0;
+        }
+
+        .feature-box {
+            background: #3f403f;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .feature-box h3 {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Game Collection</h1>
-        <h2>Remember, all of these projects are run off of Github Pages</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h2>Drive Mad</h2>
-                <a href="https://BluePotato102.github.io/drive-mad" target="_blank">Play</a>
-                <p>a cool driving game that has like 500 levels</p>
-                <p>Rating: ⭐⭐⭐⭐</p>
-            </div>
+        <h1>Welcome to Coobertory</h1>
+        <div class="subtitle">Your Ultimate Gaming Collection Hub</div>
+        
+        <div class="main-buttons">
+            <a href="games.html" class="button">Browse Games</a>
+            <a href="https://github.com/EliteCronax/Coobertory" class="button">GitHub</a>
+        </div>
 
-            <div class="project-card">
-                <h2>Minecraft</h2>
-                <a href="https://elitecronax.github.io/eaglrcraft/" target="_blank">Play</a>
-                <p>cool minecraft dupe that works with multiplayer</p>
-                <p>Rating: ⭐⭐⭐⭐⭐</p>
+        <div class="feature-section">
+            <div class="feature-box">
+                <h3>Free Games</h3>
+                <p>Access a wide variety of games without any cost</p>
             </div>
-
-            <div class="project-card">
-                <h2>Doge Miner</h2>
-                <a href="doge-miner-eight.vercel.app" target="_blank">Play</a>
-                <p>fun crypto mining experience</p>
-                <p>Rating: ⭐⭐⭐</p>
+            <div class="feature-box">
+                <h3>No Downloads</h3>
+                <p>Play instantly in your browser</p>
             </div>
-
-            <div class="project-card">
-                <h2>Cookie Clicker</h2>
-                <a href="https://mopsjaja2.github.io/CookieClicker/" target="_blank">Play</a>
-                <p>cookie clicker. unexplainable</p>
-                <p>Rating: ⭐⭐⭐⭐</p>
-            </div>
-
-            <div class="project-card">
-                <h2>Soccer Skills World Cup</h2>
-                <a href="https://msn-21-unblocked.github.io/games/soccer-skills-world-cup" target="_blank">Play</a>
-                <p>ramiro</p>
-                <p>Rating: ⭐⭐⭐⭐</p>
-            </div>
-
-            <div class="project-card">
-                <h2>Paper.io 2</h2>
-                <a href="https://msn-21-unblocked.github.io/games/paper-io-2" target="_blank">Play</a>
-                <p>game to make big room idk</p>
-                <p>Rating: ⭐⭐⭐</p>
-            </div>
-
-            <div class="project-card">
-                <h2>Tiny Fishing</h2>
-                <a href="https://msn-21-unblocked.github.io/games/tiny-fishing/" target="_blank">Play</a>
-                <p>fishing game and upgrade to get more fish and go deeper for more money</p>
-                <p>Rating: ⭐⭐⭐</p>
-            </div>
-
-            <div class="project-card">
-                <h2>Swerve</h2>
-                <a href="https://msn-21-unblocked.github.io/games/swerve" target="_blank">Play</a>
-                <p>timing</p>
-                <p>Rating: ⭐⭐⭐⭐</p>
-            </div>
-
-            <div class="project-card">
-                <h2>Awesome Tanks 2</h2>
-                <a href="https://ucbg.github.io/awesome-tanks-2/" target="_blank">Play</a>
-                <p>classic tank game that is cool</p>
-                <p>Rating: ⭐⭐⭐⭐⭐</p>
-            </div>
-
-            <div class="project-card">
-                <h2>Sandboxels</h2>
-                <a href="https://msn-21-unblocked.github.io/games/sandboxels/" target="_blank">Play</a>
-                <p>cool pixel game</p>
-                <p>Rating: ⭐⭐⭐⭐⭐</p>
+            <div class="feature-box">
+                <h3>Regular Updates</h3>
+                <p>New games added frequently</p>
             </div>
         </div>
     </div>
