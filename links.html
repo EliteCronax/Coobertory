@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coobertory - Home</title>
+    <title>Coobertory - Links</title>
     <link rel="icon" href="images/coobert.ico" type="image/x-icon"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -94,16 +94,42 @@
         .feature-box {
             background: rgba(63, 64, 63, 0.8);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
         }
 
         .feature-box h3 {
             margin-top: 0;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
 
         .feature-box a {
-            color: #f7f7f7;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            padding: 12px 20px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            padding-left: 25px;
+        }
+
+        .feature-box p {
+            margin: 0;
         }
     </style>
 </head>
