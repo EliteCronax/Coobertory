@@ -18,29 +18,17 @@
         }
 
         @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1800px;
             margin: 0 auto;
         }
 
-        h1 {
-            text-align: center;
-            color: #f7f7f7;
-            margin-bottom: 40px;
-        }
-
-        h2 {
+        h1, h2 {
             text-align: center;
             color: #f7f7f7;
             margin-bottom: 40px;
@@ -48,7 +36,7 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
             gap: 20px;
         }
 
@@ -59,6 +47,9 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .project-card:hover {
@@ -68,6 +59,14 @@
         .project-card h2 {
             color: #f7f7f7;
             margin-top: 0;
+        }
+
+        .game-image {
+            width: 512px;
+            height: 512px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 10px 0;
         }
 
         .project-card a {
@@ -128,7 +127,7 @@
         <div class="projects">
             <div class="project-card">
                 <h2>Drive Mad</h2>
-                <img src="images/drivemad.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/drivemad.ico" alt="Game Icon" class="game-image">
                 <a href="https://BluePotato102.github.io/drive-mad" target="_blank">Play</a>
                 <p>a cool driving game that has like 500 levels</p>
                 <p>Rating: ⭐⭐⭐⭐</p>
@@ -136,7 +135,7 @@
 
             <div class="project-card">
                 <h2>Minecraft</h2>
-                <img src="images/Minecraft.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/Minecraft.ico" alt="Game Icon" class="game-image">
                 <a href="https://elitecronax.github.io/eaglrcraft/" target="_blank">Play</a>
                 <p>cool minecraft dupe that works with multiplayer</p>
                 <p>Rating: ⭐⭐⭐⭐⭐</p>
@@ -144,7 +143,7 @@
 
             <div class="project-card">
                 <h2>Doge Miner</h2>
-                <img src="images/dogeminer.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/dogeminer.ico" alt="Game Icon" class="game-image">
                 <a href="doge-miner-eight.vercel.app" target="_blank">Play</a>
                 <p>fun crypto mining experience</p>
                 <p>Rating: ⭐⭐⭐</p>
@@ -152,7 +151,7 @@
 
             <div class="project-card">
                 <h2>Cookie Clicker</h2>
-                <img src="images/cookieclicker.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/cookieclicker.ico" alt="Game Icon" class="game-image">
                 <a href="https://mopsjaja2.github.io/CookieClicker/" target="_blank">Play</a>
                 <p>cookie clicker. unexplainable</p>
                 <p>Rating: ⭐⭐⭐⭐</p>
@@ -160,7 +159,7 @@
 
             <div class="project-card">
                 <h2>Soccer Skills World Cup</h2>
-                <img src="images/soccerskillsworldcup.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/soccerskillsworldcup.ico" alt="Game Icon" class="game-image">
                 <a href="https://msn-21-unblocked.github.io/games/soccer-skills-world-cup" target="_blank">Play</a>
                 <p>ramiro</p>
                 <p>Rating: ⭐⭐⭐⭐</p>
@@ -168,7 +167,7 @@
 
             <div class="project-card">
                 <h2>Paper.io 2</h2>
-                <img src="images/paperio2.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/paperio2.ico" alt="Game Icon" class="game-image">
                 <a href="https://msn-21-unblocked.github.io/games/paper-io-2" target="_blank">Play</a>
                 <p>game to make big room idk</p>
                 <p>Rating: ⭐⭐⭐</p>
@@ -176,7 +175,7 @@
 
             <div class="project-card">
                 <h2>Tiny Fishing</h2>
-                <img src="images/tinyfishing.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/tinyfishing.ico" alt="Game Icon" class="game-image">
                 <a href="https://msn-21-unblocked.github.io/games/tiny-fishing/" target="_blank">Play</a>
                 <p>fishing game and upgrade to get more fish and go deeper for more money</p>
                 <p>Rating: ⭐⭐⭐</p>
@@ -184,7 +183,7 @@
 
             <div class="project-card">
                 <h2>Swerve</h2>
-                <img src="images/swerve.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/swerve.ico" alt="Game Icon" class="game-image">
                 <a href="https://msn-21-unblocked.github.io/games/swerve" target="_blank">Play</a>
                 <p>timing</p>
                 <p>Rating: ⭐⭐⭐⭐</p>
@@ -192,7 +191,7 @@
 
             <div class="project-card">
                 <h2>Awesome Tanks 2</h2>
-                <img src="images/awesometanks2.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/awesometanks2.ico" alt="Game Icon" class="game-image">
                 <a href="https://ucbg.github.io/awesome-tanks-2/" target="_blank">Play</a>
                 <p>classic tank game that is cool</p>
                 <p>Rating: ⭐⭐⭐⭐⭐</p>
@@ -200,7 +199,7 @@
 
             <div class="project-card">
                 <h2>Sandboxels</h2>
-                <img src="images/sandboxels.ico" alt="Game Icon" style="width: 32px; height: 32px;">
+                <img src="images/sandboxels.ico" alt="Game Icon" class="game-image">
                 <a href="https://msn-21-unblocked.github.io/games/sandboxels/" target="_blank">Play</a>
                 <p>cool pixel game</p>
                 <p>Rating: ⭐⭐⭐⭐⭐</p>
