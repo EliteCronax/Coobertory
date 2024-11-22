@@ -24,8 +24,9 @@
         }
 
         .container {
-            max-width: 1800px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         h1, h2 {
@@ -36,13 +37,13 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-
+        
         .project-card {
             background: rgba(63, 64, 63, 0.8);
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
@@ -62,8 +63,8 @@
         }
 
         .game-image {
-            width: 512px;
-            height: 512px;
+            width: 256px;
+            height: 256px;
             object-fit: cover;
             border-radius: 8px;
             margin: 10px 0;
