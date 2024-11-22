@@ -6,12 +6,13 @@
     <title>Coobertory - Home</title>
     <link rel="icon" href="images/coobert.ico" type="image/x-icon"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: roboto;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -21,34 +22,31 @@
         }
 
         @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            padding: 40px 20px;
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             color: #f7f7f7;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
         }
 
         .subtitle {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #f7f7f7;
             margin-bottom: 40px;
+            font-weight: 300;
         }
 
         .main-buttons {
@@ -56,46 +54,75 @@
             justify-content: center;
             gap: 30px;
             margin-top: 50px;
+            flex-wrap: wrap;
         }
 
         .button {
-            background: #3f403f;
+            background: rgba(63, 64, 63, 0.9);
             color: white;
             padding: 20px 40px;
-            border-radius: 8px;
+            border-radius: 12px;
             text-decoration: none;
             font-size: 1.2em;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .button:hover {
             transform: translateY(-5px);
             background: #2c2d2c;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         .feature-section {
-            margin-top: 60px;
+            margin-top: 80px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             color: #f7f7f7;
         }
 
         .feature-box {
             background: rgba(63, 64, 63, 0.8);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
         }
 
         .feature-box h3 {
             margin-top: 0;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-box i {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #23d5ab;
         }
 
         .feature-box a {
-            color: #f7f7f7;
+            color: #23d5ab;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .feature-box a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3em; }
+            .subtitle { font-size: 1.4em; }
+            .button { padding: 15px 30px; }
         }
     </style>
 </head>
@@ -105,22 +132,31 @@
         <div class="subtitle">Your Ultimate Gaming Collection Hub</div>
         
         <div class="main-buttons">
-            <a href="games.html" class="button">Browse Games</a>
-            <a href="https://github.com/EliteCronax/Coobertory" class="button">GitHub</a>
+            <a href="games.html" class="button">
+                <i class="fas fa-gamepad"></i>
+                Browse Games
+            </a>
+            <a href="https://github.com/EliteCronax/Coobertory" class="button">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
         </div>
 
         <div class="feature-section">
             <div class="feature-box">
+                <i class="fas fa-gift"></i>
                 <h3>Free Games</h3>
                 <p>Access a wide variety of games without any cost</p>
             </div>
             <div class="feature-box">
+                <i class="fas fa-cloud-download-alt"></i>
                 <h3>No Downloads</h3>
-                <p>Play instantly in your browser. All the games are collected from Github and may be taken down</p>
+                <p>Play instantly in your browser. All games are collected from Github and may be taken down</p>
             </div>
             <div class="feature-box">
+                <i class="fas fa-sync-alt"></i>
                 <h3>Regular Updates</h3>
-                <p>New games added frequently. Almost daily. Visit my <a href="https://github.com/EliteCronax/Coobertory">Github</a> and make a pull request for more games</p>
+                <p>New games added frequently. Visit my <a href="https://github.com/EliteCronax/Coobertory">Github</a> and make a pull request for more games</p>
             </div>
         </div>
     </div>
