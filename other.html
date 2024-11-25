@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coobertory - Other</title>
+    <link rel="icon" href="images/coobert.ico" type="image/x-icon"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: roboto;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #f7f7f7;
+            margin-bottom: 40px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: rgba(63, 64, 63, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h2 {
+            color: #f7f7f7;
+            margin-top: 0;
+        }
+
+        .game-image {
+            width: 256px;
+            height: 256px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .project-card a {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .project-card a:hover {
+            background: #2980b9;
+        }
+
+        .project-card p {
+            color: #f7f7f7;
+            margin: 10px 0 0 0;
+        }
+
+        .main-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .button {
+            background: #3f403f;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            background: #2c2d2c;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .project-card a {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card a:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .project-card a:active {
+            transform: translateY(0);
+        }
+
+        .settings-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .settings-icon:hover {
+            transform: rotate(90deg);
+        }
+
+        .settings-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(63, 64, 63, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1001;
+            color: white;
+            min-width: 300px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-icon">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <div class="settings-modal">
+        <div class="modal-header">
+            <h3>Settings</h3>
+            <span class="close-btn">&times;</span>
+        </div>
+        <div class="setting-item">
+            <div>
+                <div>Incognito Mode</div>
+                <small>Disclose your tab to say Google</small>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="incognito-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <div>
+                <div>Quick Exit</div>
+                <small>Current key: <span id="current-key">Not Set</span></small>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <label class="switch">
+                    <input type="checkbox" id="quick-exit-toggle">
+                    <span class="slider"></span>
+                </label>
+                <button id="change-key-btn" style="padding: 5px 10px; border-radius: 4px; background: #2196F3; border: none; color: white; cursor: pointer;">Change Key</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Other</h1>
+        <h2>Remember, all of these projects are run off of Github Pages</h2>
+
+        <div class="main-buttons">
+            <a href="index.html" class="button">Home</a>
+        </div>
+
+        <h1>                                            </h1>
+        
+        <div class="projects">
+            <div class="project-card">
+                <h2>Unavailable</h2>
+                <small>There will be a proxy soon</small>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        const settingsIcon = document.querySelector('.settings-icon');
+        const settingsModal = document.querySelector('.settings-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const incognitoToggle = document.getElementById('incognito-toggle');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedIncognito = localStorage.getItem('incognitoMode');
+            if (savedIncognito === 'true') {
+                incognitoToggle.checked = true;
+                updatePageAppearance(true);
+            }
+        });
+
+        settingsIcon.addEventListener('click', () => {
+            settingsModal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            settingsModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === settingsModal) {
+                settingsModal.style.display = 'none';
+            }
+        });
+
+        function updatePageAppearance(isIncognito) {
+            if (isIncognito) {
+                document.title = 'Google';
+                const favicon = document.querySelector("link[rel='icon']");
+                favicon.href = 'images/google.png';
+            } else {
+                document.title = 'Coobertory - Games';
+                const favicon = document.querySelector("link[rel='icon']");
+                favicon.href = 'images/coobert.ico';
+            }
+        }
+
+        incognitoToggle.addEventListener('change', () => {
+            localStorage.setItem('incognitoMode', incognitoToggle.checked);
+            updatePageAppearance(incognitoToggle.checked);
+        });
+
+        const changeKeyBtn = document.getElementById('change-key-btn');
+        const currentKeySpan = document.getElementById('current-key');
+        let isListeningForKey = false;
+        let quickExitKey = localStorage.getItem('quickExitKey') || 'Escape';
+        
+        currentKeySpan.textContent = quickExitKey;
+        
+        changeKeyBtn.addEventListener('click', () => {
+            if (!isListeningForKey) {
+                isListeningForKey = true;
+                changeKeyBtn.textContent = 'Press any key...';
+                changeKeyBtn.style.background = '#ff4444';
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (isListeningForKey) {
+                e.preventDefault();
+                quickExitKey = e.key;
+                localStorage.setItem('quickExitKey', quickExitKey);
+                currentKeySpan.textContent = quickExitKey;
+                changeKeyBtn.textContent = 'Change Key';
+                changeKeyBtn.style.background = '#2196F3';
+                isListeningForKey = false;
+            } else if (e.key === quickExitKey && quickExitToggle.checked) {
+                window.location.href = 'https://www.google.com';
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedIncognito = localStorage.getItem('incognitoMode');
+            const savedQuickExit = localStorage.getItem('quickExit');
+            quickExitKey = localStorage.getItem('quickExitKey') || 'Escape';
+            currentKeySpan.textContent = quickExitKey;
+            
+            if (savedIncognito === 'true') {
+                incognitoToggle.checked = true;
+                updatePageAppearance(true);
+            }
+            
+            if (savedQuickExit === 'true') {
+                quickExitToggle.checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
