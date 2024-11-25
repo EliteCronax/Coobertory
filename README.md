@@ -1,6 +1,6 @@
 <div align="center">
     <img src="images/brand.png">
-    <p>Serving since 2023.<p>
+    <p>Serving since 2024.<p>
     <p>Coobertory is served as a unblocked website for school if you have nothing else to do.</p>
 </div>
 
