@@ -234,9 +234,9 @@
             <a href="links.html" class="button">Links</a>
         </div>
 
-        <a href="settings.html" class="settings-icon">
+        <div class="settings-icon">
             <i class="fas fa-cog"></i>
-        </a>
+        </div>
 
         <div class="feature-section">
             <div class="feature-box">
@@ -278,7 +278,7 @@
             if (incognitoToggle.checked) {
                 document.title = 'Google';
                 const favicon = document.querySelector("link[rel='icon']");
-                favicon.href = 'https://github.com/EliteCronax/Coobertory/blob/main/images/google.png';
+                favicon.href = 'images/google.png';
             } else {
                 document.title = 'Coobertory - Home';
                 const favicon = document.querySelector("link[rel='icon']");
