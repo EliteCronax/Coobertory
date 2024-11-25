@@ -260,6 +260,14 @@
         const closeBtn = document.querySelector('.close-btn');
         const incognitoToggle = document.getElementById('incognito-toggle');
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedIncognito = localStorage.getItem('incognitoMode');
+            if (savedIncognito === 'true') {
+                incognitoToggle.checked = true;
+                updatePageAppearance(true);
+            }
+        });
+
         settingsIcon.addEventListener('click', () => {
             settingsModal.style.display = 'block';
         });
@@ -274,8 +282,8 @@
             }
         });
 
-        incognitoToggle.addEventListener('change', () => {
-            if (incognitoToggle.checked) {
+        function updatePageAppearance(isIncognito) {
+            if (isIncognito) {
                 document.title = 'Google';
                 const favicon = document.querySelector("link[rel='icon']");
                 favicon.href = 'images/google.png';
@@ -284,9 +292,12 @@
                 const favicon = document.querySelector("link[rel='icon']");
                 favicon.href = 'images/coobert.ico';
             }
+        }
+
+        incognitoToggle.addEventListener('change', () => {
+            localStorage.setItem('incognitoMode', incognitoToggle.checked);
+            updatePageAppearance(incognitoToggle.checked);
         });
     </script>
-</body>
-</html>
 </body>
 </html>
