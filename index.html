@@ -6,6 +6,7 @@
     <title>Coobertory - Home</title>
     <link rel="icon" href="images/coobert.ico" type="image/x-icon"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: roboto;
@@ -109,12 +110,17 @@
         .settings-icon {
             position: fixed;
             top: 20px;
-            left: 20px;
-            font-size: 24px;
+            right: 20px;
             color: white;
+            font-size: 24px;
             cursor: pointer;
-            z-index: 1000;
+            transition: transform 0.3s ease;
         }
+        
+        .settings-icon:hover {
+            transform: rotate(90deg);
+        }
+
 
         .settings-modal {
             display: none;
@@ -227,6 +233,10 @@
             <a href="https://github.com/EliteCronax/Coobertory" class="button">GitHub</a>
             <a href="links.html" class="button">Links</a>
         </div>
+
+        <a href="settings.html" class="settings-icon">
+            <i class="fas fa-cog"></i>
+        </a>
 
         <div class="feature-section">
             <div class="feature-box">
