@@ -6,6 +6,7 @@
     <title>Coobertory - Games</title>
     <link rel="icon" href="images/coobert.ico" type="image/x-icon"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: roboto;
@@ -138,9 +139,124 @@
         .project-card a:active {
             transform: translateY(0);
         }
+
+        .settings-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .settings-icon:hover {
+            transform: rotate(90deg);
+        }
+
+        .settings-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(63, 64, 63, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1001;
+            color: white;
+            min-width: 300px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
     </style>
 </head>
 <body>
+    <div class="settings-icon">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <div class="settings-modal">
+        <div class="modal-header">
+            <h3>Settings</h3>
+            <span class="close-btn">&times;</span>
+        </div>
+        <div class="setting-item">
+            <div>
+                <div>Incognito Mode</div>
+                <small>Disclose your tab to say Google</small>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="incognito-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    
     <div class="container">
         <h1>Game Collection</h1>
         <h2>Remember, all of these projects are run off of Github Pages</h2>
@@ -225,5 +341,51 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const settingsIcon = document.querySelector('.settings-icon');
+        const settingsModal = document.querySelector('.settings-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const incognitoToggle = document.getElementById('incognito-toggle');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedIncognito = localStorage.getItem('incognitoMode');
+            if (savedIncognito === 'true') {
+                incognitoToggle.checked = true;
+                updatePageAppearance(true);
+            }
+        });
+
+        settingsIcon.addEventListener('click', () => {
+            settingsModal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            settingsModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === settingsModal) {
+                settingsModal.style.display = 'none';
+            }
+        });
+
+        function updatePageAppearance(isIncognito) {
+            if (isIncognito) {
+                document.title = 'Google';
+                const favicon = document.querySelector("link[rel='icon']");
+                favicon.href = 'images/google.png';
+            } else {
+                document.title = 'Coobertory - Games';
+                const favicon = document.querySelector("link[rel='icon']");
+                favicon.href = 'images/coobert.ico';
+            }
+        }
+
+        incognitoToggle.addEventListener('change', () => {
+            localStorage.setItem('incognitoMode', incognitoToggle.checked);
+            updatePageAppearance(incognitoToggle.checked);
+        });
+    </script>
 </body>
 </html>
