@@ -255,6 +255,19 @@
                 <span class="slider"></span>
             </label>
         </div>
+        <div class="setting-item">
+            <div>
+                <div>Quick Exit</div>
+                <small>Current key: <span id="current-key">Not Set</span></small>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <label class="switch">
+                    <input type="checkbox" id="quick-exit-toggle">
+                    <span class="slider"></span>
+                </label>
+                <button id="change-key-btn" style="padding: 5px 10px; border-radius: 4px; background: #2196F3; border: none; color: white; cursor: pointer;">Change Key</button>
+            </div>
+        </div>
     </div>
     
     <div class="container">
@@ -385,6 +398,51 @@
         incognitoToggle.addEventListener('change', () => {
             localStorage.setItem('incognitoMode', incognitoToggle.checked);
             updatePageAppearance(incognitoToggle.checked);
+        });
+
+        const changeKeyBtn = document.getElementById('change-key-btn');
+        const currentKeySpan = document.getElementById('current-key');
+        let isListeningForKey = false;
+        let quickExitKey = localStorage.getItem('quickExitKey') || 'Escape';
+        
+        currentKeySpan.textContent = quickExitKey;
+        
+        changeKeyBtn.addEventListener('click', () => {
+            if (!isListeningForKey) {
+                isListeningForKey = true;
+                changeKeyBtn.textContent = 'Press any key...';
+                changeKeyBtn.style.background = '#ff4444';
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (isListeningForKey) {
+                e.preventDefault();
+                quickExitKey = e.key;
+                localStorage.setItem('quickExitKey', quickExitKey);
+                currentKeySpan.textContent = quickExitKey;
+                changeKeyBtn.textContent = 'Change Key';
+                changeKeyBtn.style.background = '#2196F3';
+                isListeningForKey = false;
+            } else if (e.key === quickExitKey && quickExitToggle.checked) {
+                window.location.href = 'https://www.google.com';
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedIncognito = localStorage.getItem('incognitoMode');
+            const savedQuickExit = localStorage.getItem('quickExit');
+            quickExitKey = localStorage.getItem('quickExitKey') || 'Escape';
+            currentKeySpan.textContent = quickExitKey;
+            
+            if (savedIncognito === 'true') {
+                incognitoToggle.checked = true;
+                updatePageAppearance(true);
+            }
+            
+            if (savedQuickExit === 'true') {
+                quickExitToggle.checked = true;
+            }
         });
     </script>
 </body>
