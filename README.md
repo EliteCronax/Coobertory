@@ -13,6 +13,7 @@
 ## Features
 
 - Tab Cloaking
+- Quick Escape (hotkey)
 - Wide collection of apps & games
 - Clean, Easy to use UI
 - Daily updates
