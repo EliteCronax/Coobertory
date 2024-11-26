@@ -238,6 +238,42 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
+
+        .theme-dropdown {
+            padding: 8px;
+            border-radius: 4px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .theme-dropdown option {
+            background: #3f403f;
+            color: white;
+        }
+        
+        .theme-dark {
+            background: #1a1a1a !important;
+            background-image: none !important;
+        }
+        
+        .theme-light {
+            background: #f0f0f0 !important;
+            background-image: none !important;
+        }
+        
+        .theme-sunset {
+            background: linear-gradient(-45deg, #ff8c42, #ff3c6f, #6d72c3, #5941a9) !important;
+            background-size: 400% 400% !important;
+            animation: gradient 15s ease infinite !important;
+        }
+        
+        .theme-ocean {
+            background: linear-gradient(-45deg, #00b4d8, #0077b6, #023e8a, #03045e) !important;
+            background-size: 400% 400% !important;
+            animation: gradient 15s ease infinite !important;
+        }
     </style>
 </head>
 <body>
@@ -272,6 +308,19 @@
                 </label>
                 <button id="change-key-btn" style="padding: 5px 10px; border-radius: 4px; background: #2196F3; border: none; color: white; cursor: pointer;">Change Key</button>
             </div>
+        </div>
+        <div class="setting-item">
+            <div>
+                <div>Theme</div>
+                <small>Choose your preferred color scheme</small>
+            </div>
+            <select id="theme-selector" class="theme-dropdown">
+                <option value="default">Default Gradient</option>
+                <option value="dark">Dark Mode</option>
+                <option value="light">Light Mode</option>
+                <option value="sunset">Sunset</option>
+                <option value="ocean">Ocean</option>
+            </select>
         </div>
     </div>
     
