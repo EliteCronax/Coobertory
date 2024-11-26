@@ -268,6 +268,19 @@
                 <button id="change-key-btn" style="padding: 5px 10px; border-radius: 4px; background: #2196F3; border: none; color: white; cursor: pointer;">Change Key</button>
             </div>
         </div>
+        <div class="setting-item">
+            <div>
+                <div>Theme</div>
+                <small>Choose your preferred color scheme</small>
+            </div>
+            <select id="theme-selector" class="theme-dropdown">
+                <option value="default">Default Gradient</option>
+                <option value="dark">Dark Mode</option>
+                <option value="light">Light Mode</option>
+                <option value="sunset">Sunset</option>
+                <option value="ocean">Ocean</option>
+            </select>
+        </div>
     </div>
     
     <div class="container">
@@ -444,6 +457,30 @@
                 quickExitToggle.checked = true;
             }
         });
+
+        const themeSelector = document.getElementById('theme-selector');
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                themeSelector.value = savedTheme;
+                applyTheme(savedTheme);
+            }
+        });
+        
+        themeSelector.addEventListener('change', (e) => {
+            const selectedTheme = e.target.value;
+            localStorage.setItem('selectedTheme', selectedTheme);
+            applyTheme(selectedTheme);
+        });
+        
+        function applyTheme(theme) {
+            document.body.classList.remove('theme-dark', 'theme-light', 'theme-sunset', 'theme-ocean');
+            
+            if (theme !== 'default') {
+                document.body.classList.add(`theme-${theme}`);
+            }
+        }
     </script>
 </body>
 </html>
