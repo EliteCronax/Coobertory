@@ -2,7 +2,7 @@
   "name": "coobertory",
   "version": "1.0.0",
   "description": "Unblocked Games",
-  "main": "pages/index.html",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
