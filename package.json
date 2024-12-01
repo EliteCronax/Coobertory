@@ -1,8 +1,8 @@
 {
   "name": "coobertory",
   "version": "1.0.0",
-  "description": "Coobertory project",
-  "main": "index.js",
+  "description": "Unblocked Games",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +12,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "AGPL-3.0"
 }
