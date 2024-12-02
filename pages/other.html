@@ -329,7 +329,7 @@
         <h2>Remember, all of these projects are run off of Github Pages</h2>
 
         <div class="main-buttons">
-            <a href="coobertory/index.html" class="button">Home</a>
+            <a href="#" class="button" data-page="index">Home</a>
         </div>
 
         <h1>                                            </h1>
@@ -432,6 +432,24 @@
                 quickExitToggle.checked = true;
             }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.button[data-page]');
+        const currentDomain = window.location.hostname;
+        const baseUrl = currentDomain.includes('vercel.app') 
+            ? 'https://coobertory.vercel.app'
+            : 'https://coobertory.github.io';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const page = button.getAttribute('data-page');
+                if (page) {
+                    e.preventDefault();
+                    window.location.href = `${baseUrl}/${page}`;
+                }
+            });
+        });
+    });
     </script>
 </body>
 </html>
