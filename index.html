@@ -310,9 +310,9 @@
         <div class="subtitle">Your Ultimate Gaming Collection Hub</div>
         
         <div class="main-buttons">
-            <a href="#" class="button" data-page="pages/games.html">Browse Games</a>
-            <a href="#" class="button" data-page="pages/other.html">Other</a>
-            <a href="#" class="button" data-page="pages/links.html">Links</a>
+            <a href="games.html" class="button">Browse Games</a>
+            <a href="other.html" class="button">Other</a>
+            <a href="links.html" class="button">Links</a>
             <a href="https://github.com/EliteCronax/Coobertory" class="button">GitHub</a>
             <a href="https://discord.gg/ayx9jUzpaF" class="discord">Discord</a>
         </div>
@@ -450,24 +450,6 @@
                 document.body.classList.add(`theme-${theme}`);
             }
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('.button[data-page]');
-        const currentDomain = window.location.hostname;
-        const baseUrl = currentDomain.includes('vercel.app') 
-            ? 'https://coobertory.vercel.app'
-            : 'https://coobertory.github.io';
-
-        buttons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const page = button.getAttribute('data-page');
-                if (page) {
-                    e.preventDefault();
-                    window.location.href = `${baseUrl}/${page}`;
-                }
-            });
-        });
-    });
     </script>
 </body>
 </html>

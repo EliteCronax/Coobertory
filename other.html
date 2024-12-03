@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coobertory - Games</title>
+    <title>Coobertory - Other</title>
     <link rel="icon" href="images/coobert.ico" type="image/x-icon"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,6 +36,11 @@
             margin-bottom: 40px;
         }
 
+        p {
+            color: #f7f7f7;
+            margin-bottom: 40px;
+        }
+
         .projects {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -63,7 +68,7 @@
             margin-top: 0;
         }
 
-        .game-image {
+        .image {
             width: 256px;
             height: 256px;
             object-fit: cover;
@@ -233,6 +238,42 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
+
+        .theme-dropdown {
+            padding: 8px;
+            border-radius: 4px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .theme-dropdown option {
+            background: #3f403f;
+            color: white;
+        }
+        
+        .theme-dark {
+            background: #1a1a1a !important;
+            background-image: none !important;
+        }
+        
+        .theme-light {
+            background: #f0f0f0 !important;
+            background-image: none !important;
+        }
+        
+        .theme-sunset {
+            background: linear-gradient(-45deg, #ff8c42, #ff3c6f, #6d72c3, #5941a9) !important;
+            background-size: 400% 400% !important;
+            animation: gradient 15s ease infinite !important;
+        }
+        
+        .theme-ocean {
+            background: linear-gradient(-45deg, #00b4d8, #0077b6, #023e8a, #03045e) !important;
+            background-size: 400% 400% !important;
+            animation: gradient 15s ease infinite !important;
+        }
     </style>
 </head>
 <body>
@@ -284,87 +325,21 @@
     </div>
     
     <div class="container">
-        <h1>Game Collection</h1>
+        <h1>Other</h1>
         <h2>Remember, all of these projects are run off of Github Pages</h2>
 
         <div class="main-buttons">
-            <a href="#" class="button" data-page="index.html">Home</a>
+            <a href="index.html" class="button">Home</a>
         </div>
 
         <h1>                                            </h1>
         
         <div class="projects">
             <div class="project-card">
-                <h2>Drive Mad</h2>
-                <img src="images/drivemad.ico" alt="Game Icon" class="game-image">
-                <a href="games/drivemad.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Minecraft</h2>
-                <img src="images/Minecraft.ico" alt="Game Icon" class="game-image">
-                <a href="games/minecraft.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Doge Miner</h2>
-                <img src="images/dogeminer.ico" alt="Game Icon" class="game-image">
-                <a href="games/dogeminer.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Cookie Clicker</h2>
-                <img src="images/cookieclicker.ico" alt="Game Icon" class="game-image">
-                <a href="games/cookieclicker.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Soccer Skills World Cup</h2>
-                <img src="images/soccerskillsworldcup.ico" alt="Game Icon" class="game-image">
-                <a href="games/soccerskillsworldcup.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Paper.io 2</h2>
-                <img src="images/paperio2.ico" alt="Game Icon" class="game-image">
-                <a href="games/paperio2.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Tiny Fishing</h2>
-                <img src="images/tinyfishing.ico" alt="Game Icon" class="game-image">
-                <a href="games/tinyfishing.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Swerve</h2>
-                <img src="images/swerve.ico" alt="Game Icon" class="game-image">
-                <a href="games/swerve.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Awesome Tanks 2</h2>
-                <img src="images/awesometanks2.ico" alt="Game Icon" class="game-image">
-                <a href="games/awesometanks2.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>Sandboxels</h2>
-                <img src="images/sandboxels.ico" alt="Game Icon" class="game-image">
-                <a href="games/sandboxels.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>YoHoHo.io</h2>
-                <img src="images/yohohoio.ico" alt="Game Icon" class="game-image">
-                <a href="games/yohohoio.html">Play</a>
-            </div>
-        
-            <div class="project-card">
-                <h2>BitLife</h2>
-                <img src="images/bitlife.ico" alt="Game Icon" class="game-image">
-                <a href="games/bitlife.html">Play</a>
-            </div>
+                <h2>YouTube Unblocked</h2>
+                <img src="images/yt.ico" alt="Icon" class="image"> 
+                <a href="other/unavailable.html">Unavailable</a>
+            </div> 
         </div>
     </div>
 
@@ -457,30 +432,6 @@
                 quickExitToggle.checked = true;
             }
         });
-
-        const themeSelector = document.getElementById('theme-selector');
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('selectedTheme');
-            if (savedTheme) {
-                themeSelector.value = savedTheme;
-                applyTheme(savedTheme);
-            }
-        });
-        
-        themeSelector.addEventListener('change', (e) => {
-            const selectedTheme = e.target.value;
-            localStorage.setItem('selectedTheme', selectedTheme);
-            applyTheme(selectedTheme);
-        });
-        
-        function applyTheme(theme) {
-            document.body.classList.remove('theme-dark', 'theme-light', 'theme-sunset', 'theme-ocean');
-            
-            if (theme !== 'default') {
-                document.body.classList.add(`theme-${theme}`);
-            }
-        }
     </script>
 </body>
 </html>
